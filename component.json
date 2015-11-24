@@ -1,9 +1,0 @@
-{
-    "repos": "https://github.com/igorprado/react-notification-system.git",
-    "version": "0.2.4",
-    "name": "react-notification-system",
-    "main": "NotificationSystem.js",
-    "dependencies": {
-        "object-assign": "^4.0.1"
-    }
-}
