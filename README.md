@@ -1,16 +1,12 @@
 # React Notification System
 
-[![npm version](https://badge.fury.io/js/react-notification-system.svg)](http://badge.fury.io/js/react-notification-system) [![npm](https://img.shields.io/npm/dm/react-notification-system.svg)](https://www.npmjs.com/package/react-notification-system) [![Dependency Status](https://david-dm.org/igorprado/react-notification-system.svg)](https://david-dm.org/igorprado/react-notification-system) [![Package Quality](http://npm.packagequality.com/shield/react-notification-system.svg)](http://packagequality.com/#?package=react-notification-system)
+[![npm version](https://badge.fury.io/js/react-notification-system.svg)](http://badge.fury.io/js/react-notification-system) [![npm](https://img.shields.io/npm/dm/react-notification-system.svg)](https://www.npmjs.com/package/react-notification-system) [![Dependency Status](https://david-dm.org/igorprado/react-notification-system.svg)](https://david-dm.org/igorprado/react-notification-system) [![devDependency Status](https://david-dm.org/igorprado/react-notification-system/dev-status.svg)](https://david-dm.org/igorprado/react-notification-system#info=devDependencies) [![Build Status](https://travis-ci.org/igorprado/react-notification-system.svg)](https://travis-ci.org/igorprado/react-notification-system) [![Coverage Status](https://coveralls.io/repos/igorprado/react-notification-system/badge.svg?branch=master&service=github)](https://coveralls.io/github/igorprado/react-notification-system?branch=master)
 
-A complete and totally customizable notification system for React applications.
+> A complete and totally customizable component for notifications in React.
 
-Initially built for [Eterpret](http://dev.eterpret.com) @ [Scalable Path](http://www.scalablepath.com).
+_Initially built for [Eterpret](http://dev.eterpret.com) @ [Scalable Path](http://www.scalablepath.com)._
 
-![Example gif](example/example.gif "Example gif")
-
-## Demo
-
-* [http://igorprado.github.io/react-notification-system](http://igorprado.github.io/react-notification-system)
+<a href="https://igorprado.github.io/react-notification-system/"><img width="728" src="example/src/images/screenshot.jpg" alt="Screenshot"></a>
 
 ## Installing
 
@@ -102,7 +98,7 @@ The notification object has the following properties:
 | position     | string          | tr        | Position of the notification. Available: **tr (top right)**, **tl (top left)**, **tc (top center)**, **br (bottom right)**, **bl (bottom left)**, **bc (bottom center)**  |
 | autoDismiss  | integer         | 5         | Delay in seconds for the notification go away. Set this to **0** to not auto-dismiss the notification                                                                      |
 | dismissible  | bool            | true      | Set if notification is dismissible by the user. [See more](#dismissible)                                                                                                  |
-| action       | object          | null      | Add a button with label and callback function. [See more](#action)                                                                                                        |
+| action       | object          | null      | Add a button with label and callback function (callback is optional). [See more](#action)                                                                                                        |
 | onAdd | function | null | A callback function that will be called when the notification is successfully added. The first argument is the original notification e.g. `function (notification) { console.log(notification.title + 'was added'); }` |
 | onRemove     | function        | null      | A callback function that will be called when the notification is about to be removed. The first argument is the original notification e.g. `function (notification) { console.log(notification.title + 'was removed'); }` |
 | uid          | integer/string           | null      | Overrides the internal `uid`. Useful if you are managing your notifications id. Notifications with same `uid` won't be displayed. |
@@ -114,7 +110,7 @@ If set to false, the notification will not display the dismiss ('x') button and 
 
 ### Action
 
-Add a button and a callback function to the notification. If this button is clicked, the callback function is called and the notification is dismissed.
+Add a button and a callback function to the notification. If this button is clicked, the callback function is called (if provided) and the notification is dismissed.
 
 ```js
 notification = {
@@ -193,7 +189,7 @@ Using this method you have to take care of **every style**, since containers pos
 ```
 ## Roadmap
 
-* Add tests
+* Improve tests and coverage
 * Improve performance
 
 ## Contributions
@@ -210,16 +206,24 @@ Enter the project folder and install the dependencies:
 npm install
 ```
 
-To build the files, run from `root` folder:
+To start a development server and use the `example` app to load the component, type:
 
 ```
-npm run build
+npm start
 ```
 
-To watch files for change and automatically build:
+Open `http://localhost:8000`.
+
+---
+
+Run the tests:
 
 ```
-npm run watch
+npm test
 ```
+
+You can find the coverage details under `coverage/` folder.
+
+After that, just edit the files under `src/` and `example/src/app.js`. It uses React hot reload.
 
 This component is under construction. I will add more guidelines to who wants to contribute.
